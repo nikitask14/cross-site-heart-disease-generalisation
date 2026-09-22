@@ -23,7 +23,32 @@ The project uses the UCI Heart Disease collection, which contains data associate
 
 The project will first examine these sites separately before making decisions about pooling, modelling, and evaluation.
 
-## Current Stage
+## Target
+
+The original num target is converted into a binary classification problem:
+
+* 0 → heart disease absent
+* 1–4 → heart disease present
+
+The original num column is retained for traceability.
+
+## Experimental Design
+
+Each site is split separately into:
+
+* 60% training
+* 20% validation
+* 20% test
+
+The split is stratified using the binary target.
+
+Corresponding site-specific subsets are then pooled to create centralized training, validation, and test sets, while the individual site test sets are retained for cross-site evaluation.
+
+Current pooled split sizes:
+
+Train: 550
+Validation: 185
+Test: 185
 
 **Stage 1 — Dataset understanding**
 
@@ -54,6 +79,10 @@ Dataset understanding
 → interpretation
 → limitations
 → next research question
+
+## Current Stage
+
+Preprocessing
 
 ## Scope
 
