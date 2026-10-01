@@ -80,9 +80,6 @@ Dataset understanding
 → limitations
 → next research question
 
-## Current Stage
-
-Preprocessing
 
 ## Scope
 
@@ -94,4 +91,16 @@ This project uses **centralized learning**. Federated learning and FedAvg will b
 
 ## Status
 
-Work in progress.
+Complete
+
+## Results
+
+A Logistic Regression baseline and a small PyTorch MLP were trained on centrally pooled data from four UCI Heart Disease sites and evaluated on both pooled and site-specific held-out test sets.
+
+Both models showed broadly similar pooled and site-wise performance, suggesting reasonable generalisation across the contributing sites. However, modest site-specific differences were observed.
+
+Notably, the relative behaviour of Cleveland, Hungary, Switzerland, and VA compared with pooled performance was similar across both Logistic Regression and MLP. This suggests that the remaining variation may reflect characteristics of the individual site datasets rather than being specific to one model architecture.
+
+The experiment therefore demonstrates why pooled evaluation should be complemented by site-wise analysis when studying heterogeneous multi-site data.
+
+Switzerland results are interpreted cautiously because its test split is small and highly class-imbalanced.
